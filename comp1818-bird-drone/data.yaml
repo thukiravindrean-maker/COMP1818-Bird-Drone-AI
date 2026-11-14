@@ -1,0 +1,13 @@
+﻿path: datasets/aod4_evaluation
+
+train: images/test
+val: images/test
+test: images/test
+
+nc: 4
+
+names:
+  0: airplane
+  1: bird
+  2: drone
+  3: helicopter

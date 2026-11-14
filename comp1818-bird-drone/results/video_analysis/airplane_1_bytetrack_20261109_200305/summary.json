@@ -1,0 +1,50 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "clips\\airplane_1.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 76,
+  "detection_events": {
+    "bird": 25,
+    "airplane": 48,
+    "helicopter": 2
+  },
+  "unique_track_ids": 3,
+  "mean_processing_ms": 98.46,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "bird": 21,
+        "airplane": 43,
+        "helicopter": 2
+      },
+      "majority_class": "airplane",
+      "class_transitions": 19
+    },
+    "9": {
+      "predictions": {
+        "bird": 3,
+        "airplane": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 4
+    },
+    "12": {
+      "predictions": {
+        "airplane": 1,
+        "bird": 1
+      },
+      "majority_class": "airplane",
+      "class_transitions": 1
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

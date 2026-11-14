@@ -1,0 +1,77 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "C:\\Users\\User\\OneDrive\\Documents\\COMP1818_Bird_Drone_Project_Fixed\\comp1818-bird-drone\\clips\\helicopter_2.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "helicopter": 37,
+    "airplane": 29,
+    "bird": 21
+  },
+  "unique_track_ids": 7,
+  "mean_processing_ms": 73.47,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "helicopter": 35,
+        "airplane": 23,
+        "bird": 18
+      },
+      "majority_class": "helicopter",
+      "class_transitions": 34
+    },
+    "6": {
+      "predictions": {
+        "helicopter": 1
+      },
+      "majority_class": "helicopter",
+      "class_transitions": 0
+    },
+    "8": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "12": {
+      "predictions": {
+        "airplane": 1
+      },
+      "majority_class": "airplane",
+      "class_transitions": 0
+    },
+    "15": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "21": {
+      "predictions": {
+        "airplane": 1
+      },
+      "majority_class": "airplane",
+      "class_transitions": 0
+    },
+    "23": {
+      "predictions": {
+        "helicopter": 1,
+        "airplane": 3
+      },
+      "majority_class": "airplane",
+      "class_transitions": 1
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

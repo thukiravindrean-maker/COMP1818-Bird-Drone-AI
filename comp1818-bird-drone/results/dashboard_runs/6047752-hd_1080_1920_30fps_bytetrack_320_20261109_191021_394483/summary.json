@@ -1,0 +1,28 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "6047752-hd_1080_1920_30fps.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "bird": 125
+  },
+  "unique_track_ids": 15,
+  "max_simultaneous_detections": 5,
+  "class_transitions": 0,
+  "mean_processing_ms": 55.36,
+  "processing_only_fps": 18.06,
+  "end_to_end_fps": 9.18,
+  "identity_switches": null,
+  "count_error": null,
+  "identity_ground_truth_status": "not annotated",
+  "limitations": [
+    "Event totals count detections across frames, not physical individuals.",
+    "Unique tracking IDs are not verified object counts.",
+    "Class transitions are not identity switches.",
+    "CPU timings are from one run; repeat for reliable benchmarking."
+  ]
+}

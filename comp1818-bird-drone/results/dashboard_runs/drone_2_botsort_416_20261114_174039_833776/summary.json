@@ -1,0 +1,29 @@
+{
+  "model": "models\\best_10epochs.pt",
+  "video": "drone_2.mp4",
+  "tracker": "botsort",
+  "device": "CPU",
+  "image_size": 416,
+  "confidence": 0.4,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "airplane": 80,
+    "bird": 1
+  },
+  "unique_track_ids": 2,
+  "max_simultaneous_detections": 2,
+  "class_transitions": 0,
+  "mean_processing_ms": 67.95,
+  "processing_only_fps": 14.72,
+  "end_to_end_fps": 8.7,
+  "identity_switches": null,
+  "count_error": null,
+  "identity_ground_truth_status": "not annotated",
+  "limitations": [
+    "Event totals count detections across frames, not physical individuals.",
+    "Unique tracking IDs are not verified object counts.",
+    "Class transitions are not identity switches.",
+    "CPU timings are from one run; repeat for reliable benchmarking."
+  ]
+}

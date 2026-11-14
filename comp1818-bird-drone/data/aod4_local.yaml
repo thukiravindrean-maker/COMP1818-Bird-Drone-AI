@@ -1,0 +1,14 @@
+# AOD-4 config for the LAPTOP (evaluate.py, track.py)
+# Use an ABSOLUTE path - Ultralytics and evaluate.py resolve relative paths differently.
+# TODO: replace <your folder>. Forward slashes work on Windows.
+path: C:/Users/User/OneDrive/Desktop/<your folder>/datasets/AOD-4
+train: images/train
+val: images/val
+test: images/test
+
+# TODO: copy the class names IN THE SAME ORDER as the dataset's own files - placeholder order below.
+names:
+  0: airplane    # TODO verify
+  1: bird        # TODO verify
+  2: drone       # TODO verify
+  3: helicopter  # TODO verify

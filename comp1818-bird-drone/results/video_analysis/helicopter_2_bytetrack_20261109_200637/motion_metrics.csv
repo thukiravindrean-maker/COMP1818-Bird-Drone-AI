@@ -1,0 +1,4 @@
+track_id,class,observations,duration_sec,distance_pixels,average_speed_px_sec,class_transitions
+1,helicopter,76,5.267,129.09,24.51,34
+15,bird,2,0.4,1.87,4.66,0
+23,airplane,4,0.2,4.28,21.42,1

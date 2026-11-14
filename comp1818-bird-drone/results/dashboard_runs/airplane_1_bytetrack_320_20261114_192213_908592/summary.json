@@ -1,0 +1,29 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "airplane_1.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 76,
+  "detection_events": {
+    "bird": 37,
+    "airplane": 38
+  },
+  "unique_track_ids": 4,
+  "max_simultaneous_detections": 2,
+  "class_transitions": 15,
+  "mean_processing_ms": 61.06,
+  "processing_only_fps": 16.38,
+  "end_to_end_fps": 10.04,
+  "identity_switches": null,
+  "count_error": null,
+  "identity_ground_truth_status": "not annotated",
+  "limitations": [
+    "Event totals count detections across frames, not physical individuals.",
+    "Unique tracking IDs are not verified object counts.",
+    "Class transitions are not identity switches.",
+    "CPU timings are from one run; repeat for reliable benchmarking."
+  ]
+}

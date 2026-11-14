@@ -1,0 +1,534 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "C:\\Users\\User\\OneDrive\\Documents\\COMP1818_Bird_Drone_Project_Fixed\\comp1818-bird-drone\\clips\\bird_02.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "bird": 371
+  },
+  "unique_track_ids": 73,
+  "mean_processing_ms": 78.83,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "bird": 16
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "2": {
+      "predictions": {
+        "bird": 10
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "3": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "4": {
+      "predictions": {
+        "bird": 6
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "5": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "6": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "7": {
+      "predictions": {
+        "bird": 6
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "8": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "9": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "10": {
+      "predictions": {
+        "bird": 23
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "11": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "12": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "13": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "14": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "15": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "16": {
+      "predictions": {
+        "bird": 5
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "17": {
+      "predictions": {
+        "bird": 6
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "18": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "19": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "20": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "24": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "45": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "141": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "161": {
+      "predictions": {
+        "bird": 16
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "171": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "204": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "205": {
+      "predictions": {
+        "bird": 38
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "222": {
+      "predictions": {
+        "bird": 28
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "226": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "318": {
+      "predictions": {
+        "bird": 7
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "333": {
+      "predictions": {
+        "bird": 5
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "356": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "366": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "394": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "405": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "434": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "438": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "464": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "469": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "503": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "534": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "539": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "544": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "564": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "586": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "587": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "599": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "622": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "634": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "642": {
+      "predictions": {
+        "bird": 5
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "651": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "669": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "709": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "712": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "731": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "739": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "752": {
+      "predictions": {
+        "bird": 31
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "755": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "760": {
+      "predictions": {
+        "bird": 17
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "775": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "801": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "826": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "829": {
+      "predictions": {
+        "bird": 7
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "852": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "853": {
+      "predictions": {
+        "bird": 23
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "880": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "892": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "898": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "927": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "934": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "969": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "970": {
+      "predictions": {
+        "bird": 4
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "1011": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

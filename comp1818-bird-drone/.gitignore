@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+datasets/
+runs/
+# Large media - share these through the dataset/clips link instead
+*.mp4
+*.avi
+*.mov

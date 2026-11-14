@@ -1,0 +1,34 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "clips\\drone_tracking_safe.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 79,
+  "detection_events": {
+    "drone": 12,
+    "airplane": 55,
+    "helicopter": 10
+  },
+  "unique_track_ids": 1,
+  "mean_processing_ms": 82.94,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "drone": 12,
+        "airplane": 55,
+        "helicopter": 10
+      },
+      "majority_class": "airplane",
+      "class_transitions": 34
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "C:\\Users\\User\\OneDrive\\Documents\\COMP1818_Bird_Drone_Project_Fixed\\comp1818-bird-drone\\clips\\bird_03.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "bird": 117
+  },
+  "unique_track_ids": 13,
+  "mean_processing_ms": 77.36,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "bird": 17
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "2": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "3": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "4": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "5": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "6": {
+      "predictions": {
+        "bird": 18
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "13": {
+      "predictions": {
+        "bird": 14
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "19": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "43": {
+      "predictions": {
+        "bird": 5
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "60": {
+      "predictions": {
+        "bird": 23
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "61": {
+      "predictions": {
+        "bird": 21
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "69": {
+      "predictions": {
+        "bird": 10
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "85": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

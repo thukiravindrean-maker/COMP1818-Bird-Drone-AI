@@ -1,0 +1,13 @@
+# AOD-4 config for GOOGLE COLAB (train.py)
+# Unzip the dataset to /content/datasets first: much faster than reading from Drive.
+path: /content/datasets/AOD-4
+train: images/train
+val: images/val
+test: images/test
+
+# TODO: must match aod4_local.yaml exactly (same names, same order).
+names:
+  0: airplane    # TODO verify
+  1: bird        # TODO verify
+  2: drone       # TODO verify
+  3: helicopter  # TODO verify

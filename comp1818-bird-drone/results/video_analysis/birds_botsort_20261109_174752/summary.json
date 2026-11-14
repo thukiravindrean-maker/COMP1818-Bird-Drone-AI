@@ -1,0 +1,205 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "clips\\birds.mp4",
+  "tracker": "botsort",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "bird": 491
+  },
+  "unique_track_ids": 26,
+  "mean_processing_ms": 95.61,
+  "track_details": {
+    "1": {
+      "predictions": {
+        "bird": 76
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "2": {
+      "predictions": {
+        "bird": 41
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "3": {
+      "predictions": {
+        "bird": 18
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "4": {
+      "predictions": {
+        "bird": 11
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "5": {
+      "predictions": {
+        "bird": 12
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "6": {
+      "predictions": {
+        "bird": 26
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "7": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "9": {
+      "predictions": {
+        "bird": 17
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "13": {
+      "predictions": {
+        "bird": 65
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "15": {
+      "predictions": {
+        "bird": 10
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "17": {
+      "predictions": {
+        "bird": 62
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "22": {
+      "predictions": {
+        "bird": 2
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "24": {
+      "predictions": {
+        "bird": 44
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "26": {
+      "predictions": {
+        "bird": 15
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "33": {
+      "predictions": {
+        "bird": 33
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "35": {
+      "predictions": {
+        "bird": 33
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "43": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "44": {
+      "predictions": {
+        "bird": 3
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "50": {
+      "predictions": {
+        "bird": 7
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "58": {
+      "predictions": {
+        "bird": 8
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "60": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "69": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "70": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "72": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "73": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    },
+    "74": {
+      "predictions": {
+        "bird": 1
+      },
+      "majority_class": "bird",
+      "class_transitions": 0
+    }
+  },
+  "limitations": [
+    "Detection events are not physical object counts.",
+    "Tracking IDs may fragment or be reused.",
+    "Class transitions are not tracking ID switches.",
+    "Counting accuracy requires manual ground truth."
+  ]
+}

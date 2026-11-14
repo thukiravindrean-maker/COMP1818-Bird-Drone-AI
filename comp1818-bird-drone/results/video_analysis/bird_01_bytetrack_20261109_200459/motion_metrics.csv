@@ -1,0 +1,7 @@
+track_id,class,observations,duration_sec,distance_pixels,average_speed_px_sec,class_transitions
+1,bird,4,0.1,23.39,233.93,0
+2,bird,33,1.067,106.51,99.83,0
+4,bird,10,0.3,138.05,460.17,0
+6,bird,8,0.234,27.49,117.5,0
+12,bird,51,1.666,403.21,242.02,2
+24,bird,26,0.833,131.37,157.71,0

@@ -1,0 +1,2 @@
+track_id,class,observations,duration_sec,distance_pixels,average_speed_px_sec,class_transitions
+1,drone,79,6.24,363.37,58.23,56

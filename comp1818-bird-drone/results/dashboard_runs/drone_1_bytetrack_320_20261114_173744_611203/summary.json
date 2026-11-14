@@ -1,0 +1,28 @@
+{
+  "model": "models\\best_50epochs.pt",
+  "video": "drone_1.mp4",
+  "tracker": "bytetrack",
+  "device": "CPU",
+  "image_size": 320,
+  "confidence": 0.25,
+  "stride": 2,
+  "processed_frames": 80,
+  "detection_events": {
+    "airplane": 80
+  },
+  "unique_track_ids": 1,
+  "max_simultaneous_detections": 1,
+  "class_transitions": 0,
+  "mean_processing_ms": 34.81,
+  "processing_only_fps": 28.72,
+  "end_to_end_fps": 15.45,
+  "identity_switches": null,
+  "count_error": null,
+  "identity_ground_truth_status": "not annotated",
+  "limitations": [
+    "Event totals count detections across frames, not physical individuals.",
+    "Unique tracking IDs are not verified object counts.",
+    "Class transitions are not identity switches.",
+    "CPU timings are from one run; repeat for reliable benchmarking."
+  ]
+}
