@@ -1,0 +1,12 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+*.log
+
+/COMP1818_Final_Python_Code.zip
+/staged_files.txt
+/comp1818-bird-drone/COMP1818_Test_Videos.zip
+/comp1818-bird-drone/COMP1818_Python_Packaging_Toolkit.zip
