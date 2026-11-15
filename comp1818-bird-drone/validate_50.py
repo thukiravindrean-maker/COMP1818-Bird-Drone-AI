@@ -11,13 +11,13 @@ torch.set_num_threads(1)
 
 print("Loading 50-epoch model...")
 
-model = YOLO("models/best_10epochs.pt")
+model = YOLO("models/best_50epochs.pt")
 
 print("Starting low-memory validation...")
 
 results = model.val(
     data="data.yaml",
-    imgsz=320,
+    imgsz=416,
     batch=1,
     workers=0,
     device="cpu",
