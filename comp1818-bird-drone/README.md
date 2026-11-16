@@ -1,72 +1,315 @@
-# COMP1818 — Bird vs Drone Detection and Tracking
+# Bird vs Drone Detection and Tracking Using YOLO11n
 
-**Research question:** How reliably can YOLO11n and tracking distinguish birds and drones on a CPU laptop, and when does the system fail?
+### COMP1818 — Artificial Intelligence Applications
 
-This project implements transfer learning, test-set object detection evaluation, matched baseline comparison, per-video tracking, identity evaluation and exploratory motion features. **No real experiment results are included in this skeleton: run scripts on your own files and cite actual logs.**
+**University:** University of Greenwich  
+**Student:** Thulakshan Ravindrean  
+**Academic Year:** 2026–2027
 
-## Required inputs (not included)
-- `models/best.pt`: your VERIFIED fine-tuned checkpoint. Check `args.yaml` and `results.csv` to confirm actual completed epochs.
-- `datasets/AOD-4/`: original images and YOLO-format labels with train/val/test partitions. Edit `data/aod4_local.yaml` (laptop) and `data/aod4_colab.yaml` (Colab) to the real ABSOLUTE paths and **verify class ID ordering**, which is not established by this ZIP.
-- `clips/bird.mp4`, `clips/drone.mp4`, or your own recordings with usage rights.
-- `labels_gt/<clip-name>/gt/gt.txt`: independent hand-labelled MOT-style identity ground truth (MOT frames 1-based).
-- `yolo11n.pt` original pretrained checkpoint (downloaded by Ultralytics if network access is available).
+## 1. About This Project
 
-## Install (Windows)
+This project investigates whether a computer vision model can distinguish birds from drones and other flying objects in aerial images and videos.
+
+The main research question is:
+
+**How reliably can YOLO11n and video tracking distinguish birds from drones on a CPU laptop, and under which recorded conditions do predictions become unreliable?**
+
+The project uses YOLO11n for object detection and ByteTrack and BoT-SORT for video tracking.
+
+The main aim was not to develop a completely new detection algorithm, but to evaluate how an existing model performs on labelled images and unfamiliar videos.
+
+## 2. Why I Chose This Topic
+
+Small drones can be difficult to distinguish from birds, especially when they are far away from the camera.
+
+This matters in surveillance and monitoring applications because an incorrect prediction could cause a false alert or prevent a drone from being identified correctly.
+
+I wanted to investigate whether an object detection model could provide useful results on an ordinary laptop without requiring expensive hardware for inference.
+
+The research also examines the difference between high dataset evaluation scores and performance on external videos.
+
+## 3. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| YOLO11n | Object detection |
+| Ultralytics | Model training and inference |
+| PyTorch | Machine learning framework |
+| Google Colab | GPU-based model training |
+| OpenCV | Video processing |
+| ByteTrack | Object tracking |
+| BoT-SORT | Alternative tracking method |
+| Streamlit | Project dashboard |
+| CSV and JSON | Saving experiment results |
+
+Training was completed using Google Colab GPU resources.
+
+The main video experiments were carried out using an AMD Ryzen 5 7530U laptop with 8 GB RAM and CPU-only inference.
+
+## 4. Dataset
+
+The project uses the AOD-4 dataset.
+
+AOD-4 contains images of four object classes:
+
+1. Airplane
+2. Bird
+3. Drone
+4. Helicopter
+
+The dataset uses YOLO-format bounding-box annotations.
+
+**Dataset:**  
+https://data.mendeley.com/datasets/cd5z895tr2/1
+
+**Dataset DOI:**  
+https://doi.org/10.17632/cd5z895tr2.1
+
+The complete dataset is not included in this GitHub repository.
+
+The locally configured evaluation folder contained 2,241 images. The independence of these images from the training data was not separately audited.
+
+## 5. Model Training
+
+The project started with the pretrained YOLO11n model.
+
+Three training stages were recorded:
+
+| Training stage | Completed epochs | Image size | Batch size |
+|---|---:|---:|---:|
+| Pilot | 1 | 416 | 8 |
+| Second run | 10 | 416 | 8 |
+| Final run | 50 | 416 | 8 |
+
+The final 50-epoch model was selected for the main experiments.
+
+The 50-epoch run used seed 42 and recorded `optimizer=auto`.
+
+The 10-epoch run used seed 0. The difference between these runs should not be interpreted as an epoch-only comparison.
+
+The selected local checkpoint is:
+
+`models/best_50epochs.pt`
+
+## 6. Detection Results
+
+The final checkpoint was evaluated on the locally configured 2,241-image AOD-4 evaluation folder.
+
+### Overall evaluation results
+
+| Metric | Score |
+|---|---:|
+| Precision | 0.9363 |
+| Recall | 0.9084 |
+| mAP50 | 0.9500 |
+| mAP50-95 | 0.6370 |
+
+### Per-class results
+
+| Object | Precision | Recall | mAP50 |
+|---|---:|---:|---:|
+| Airplane | 0.9475 | 0.9168 | 0.9674 |
+| Bird | 0.9223 | 0.9086 | 0.9447 |
+| Drone | 0.9428 | 0.8982 | 0.9359 |
+| Helicopter | 0.9326 | 0.9098 | 0.9522 |
+
+The evaluation used an image size of 416 on the CPU.
+
+The saved CPU evaluation output can be found at:
+
+`results/validation_50_cpu.txt`
+
+These results describe the configured labelled-image evaluation. They do not establish accuracy on external drone videos.
+
+## 7. Video Tracking
+
+The project tested two object tracking algorithms:
+
+- ByteTrack
+- BoT-SORT
+
+Both were tested using the same bird video with image size 320, confidence 0.25 and frame stride 2.
+
+Each run processed 80 sampled frames.
+
+### Tracking comparison
+
+| Metric | ByteTrack | BoT-SORT |
+|---|---:|---:|
+| Detection events | 492 | 491 |
+| Assigned track IDs | 24 | 26 |
+| Mean processing time | 82.16 ms | 95.61 ms |
+
+ByteTrack recorded a lower mean processing time in this single comparison.
+
+The assigned track IDs cannot be treated as the actual number of birds because tracking identities were not checked against manually labelled ground truth.
+
+## 8. External Video Testing
+
+The project also tested the model using external drone videos.
+
+Some predictions were labelled as airplanes or helicopters rather than drones.
+
+### Recorded results
+
+| Video | Airplane events | Bird events | Drone events | Helicopter events |
+|---|---:|---:|---:|---:|
+| drone_1.mp4 | 78 | 0 | 0 | 3 |
+| drone_2.mp4 | 75 | 1 | 0 | 2 |
+| drone_tracking_safe.mp4 | 55 | 0 | 12 | 10 |
+
+These figures represent detection events across sampled frames, not unique objects or independently confirmed classification errors.
+
+The video results demonstrate why a model should be evaluated using different types of footage rather than relying only on labelled-image metrics.
+
+## 9. Running the Project
+
+### Requirements
+
+Use Python and install the dependencies required by the relevant scripts.
+
+From the `comp1818-bird-drone` directory, create a virtual environment:
+
 ```powershell
 py -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-python -m pytest -q
 ```
-Colab training (T4 GPU; dataset unzipped to /content/datasets/AOD-4; run folder saved to Drive):
-```bash
-python train.py --data data/aod4_colab.yaml --epochs 50 --imgsz 640 --batch 16 --device 0 --name T1_e50_640 --project /content/drive/MyDrive/comp1818_runs
-# if Colab disconnects:
-yolo train resume model=/content/drive/MyDrive/comp1818_runs/T1_e50_640/weights/last.pt
+
+Activate it:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
 ```
-Do **not** claim the requested epochs completed - confirm them in `args.yaml` and `results.csv`.
 
-## Evaluation commands (run from project root)
-```bash
-python evaluate.py --data data/aod4_local.yaml --model models/best.pt --imgsz 640 --conf 0.25
-python track.py --clip clips/bird.mp4 --tracker bytetrack.yaml --imgsz 640 --conf 0.25
-python track.py --clip clips/bird.mp4 --tracker botsort.yaml --imgsz 640 --conf 0.25
-python track.py --clip clips/drone.mp4 --tracker bytetrack.yaml --imgsz 640 --conf 0.25
-python track.py --clip clips/drone.mp4 --tracker botsort.yaml --imgsz 640 --conf 0.25
-python motion.py --tracks results/tracks/bird_bytetrack_s640_c0.25_v1.csv --fps 30
-python eval_tracking.py --gt labels_gt/bird/gt/gt.txt --tracks results/tracks/bird_bytetrack_s640_c0.25_v1.csv --class-map labels_gt/class_map.json
+Install the project's listed dependencies:
+
+```powershell
+python -m pip install -r requirements.txt
 ```
-Use the clip's real fps (printed in the tracks `.json` file). `labels_gt/class_map.json` maps CVAT class IDs to model class names, e.g. `{"1": "bird", "2": "drone"}` - check the IDs in your CVAT export first. The example map is NOT a verified annotation schema.
 
-### OC-SORT
-Stock Ultralytics installations generally ship `bytetrack.yaml` and `botsort.yaml`, **not OC-SORT**. OC-SORT is deliberately **not presented as working** in this package. To add it, install a verified compatible third-party implementation and document its exact version, tracking settings and adapter. Renaming a YAML file to `ocsort.yaml` does not implement OC-SORT.
+To use the dashboard, Streamlit may also need to be installed:
 
-## Outputs
-- `results/detection_test.csv`: class P/R/AP50/AP50-95 from held-out test data.
-- `results/confusion_matrix.png`: test-set confusion matrix.
-- `results/baselines.csv`: majority-class classification baseline (not a detection score).
-- `results/matched_pr_baselines.csv`: matched confidence/IoU precision and recall for pretrained COCO and fine-tuned weights.
-- `results/tracks/*.csv`: 1-based original-frame tracking boxes with IDs.
-- `results/tracks/*.timing.csv`: timing **including frames with no boxes**, one record per processed frame.
-- `results/tracks/*.json`: exact run settings and source metadata.
-- `results/motion/*.csv`: px/s, turn and low-motion proportion; **not calibrated speed**.
-- `results/tracking_eval.csv`: actual GT-associated ID switches, track fragments and count error.
+```powershell
+python -m pip install streamlit matplotlib
+```
 
-## Fair comparison
-Hold checkpoint, source clip, sampled frame indices, confidence, image size, IoU rule, CPU and video decoding method fixed. Start at 640px, confidence 0.25 and stride 1. Count each real object once; a tracker ID change for one GT object is an ID switch; matched–unmatched–matched is a fragment. Count error = `abs(predicted_distinct_ids - GT_distinct_objects) / GT_distinct_objects * 100`, undefined for zero GT. Count separately class errors, missed detections, false tracks and time to prevent misleading conclusions. The timing includes full model+tracker calls but excludes loading, CSV export and decoding. A 640/960 or confidence sensitivity run changes just one setting from baseline.
+### Run the CPU Evaluation
 
-## Known constraints
-- Earlier reduced video tests and pilot CSV figures must not be relabelled as new controlled test evidence.
-- Motion features in image coordinates depend on camera motion, object distance, and missing frames.
-- Tracking errors may originate with object detection and classification; review video frames and the detection confusion matrix.
-- The user's assessment brief requires links to implementation and dataset, the Moodle report template and an honest AI-use declaration. Add working shared URLs and your own research analysis before submission.
-- AI helped produce this code implementation; disclose this usage accurately under your university's rules. The official brief says AI must not produce substantive assessed analysis or arguments.
+Make sure the following are available locally:
 
-## AI-assisted fixes (declare these in the AI-use reflection)
-Every changed line is marked `# AI-assisted fix` in the code.
-- `eval_tracking.py`: clip name read from the correct folder; predicted objects counted by distinct track ID (a class flip no longer doubles the count); median ms after 5 warm-up frames; re-runs replace their old row; `--class-map` accepts a `.json` file.
-- `evaluate.py`: default image size 640; prints the COCO class mapping and skips the COCO baseline with a warning if nothing matched.
-- `train.py`: defaults 50 epochs, 640px, batch 16, Colab YAML.
-- `track.py`: default stride 1; adds median ms after warm-up to the run `.json`.
-- `motion.py`: turn angles only counted between two moving steps.
-- `data/`: separate absolute-path YAMLs for laptop and Colab (Ultralytics and `evaluate.py` resolve relative paths differently).
+- `models/best_50epochs.pt`
+- `data.yaml`
+- The AOD-4 evaluation images and annotations
+
+Update `data.yaml` so its paths match the dataset's location on your computer.
+
+Then run:
+
+```powershell
+python validate_50.py
+```
+
+The script loads the selected checkpoint and runs CPU evaluation at image size 416.
+
+**Important:** The local `data.yaml` must point to the intended evaluation partition. It should not be used for model training if its training entry points to test images.
+
+### Run the Dashboard
+
+From the project directory:
+
+```powershell
+python -m streamlit run dashboard.py
+```
+
+The dashboard provides a way to inspect project outputs and video analysis.
+
+Its interface was developed as part of the project, but no formal usability study was completed.
+
+### Other Project Scripts
+
+The repository also contains scripts for training, object detection, tracking and motion analysis.
+
+Some scripts support additional experiments beyond the completed coursework runs.
+
+Their presence does not mean every experiment has been completed or evaluated.
+
+See `EXPERIMENTS.md` for the completed experiment settings and recorded results.
+
+## 10. Project Files
+
+Important files include:
+
+| File or folder | Purpose |
+|---|---|
+| `README.md` | Project overview and instructions |
+| `EXPERIMENTS.md` | Experiment records and limitations |
+| `train.py` | Training script |
+| `validate_50.py` | Final checkpoint CPU evaluation |
+| `evaluate.py` | Additional detection evaluation utility |
+| `track.py` | Video tracking utility |
+| `eval_tracking.py` | Tracking evaluation utility requiring ground truth |
+| `dashboard.py` | Streamlit dashboard |
+| `analyze_motion.py` | Motion analysis |
+| `requirements.txt` | Core project dependencies |
+| `models/` | Model files |
+| `results/` | Saved experiment outputs |
+
+The repository does not necessarily contain all original videos, dataset files or Google Colab training archives.
+
+## 11. Research Limitations
+
+The main limitations identified during the project were:
+
+- High labelled-image scores did not guarantee reliable predictions on external videos.
+- Some small drone objects were assigned airplane or helicopter labels.
+- The laptop encountered a memory limitation when processing a larger video.
+- Downscaling made some video processing feasible but may reduce visual detail.
+- Video predictions were not independently labelled to measure classification accuracy.
+- Tracking IDs were not verified against real object identities.
+- Dataset overlap was not independently audited.
+
+The results should therefore be interpreted as an experimental evaluation, not proof that the system is reliable enough for operational surveillance.
+
+## 12. Possible Future Improvements
+
+Future work could include evaluating the model at different image sizes, testing confidence thresholds, collecting more independently labelled drone videos and measuring tracking identity errors.
+
+A controlled comparison with the pretrained model or a simple baseline would also strengthen the evaluation.
+
+These are proposed improvements, not completed experimental results.
+
+## 13. AI Assistance
+
+ChatGPT was used during the project to support Python coding, debugging, technical explanations, project organisation, documentation and report drafting.
+
+The training and local experiments were carried out using Google Colab and the student's computer. AI-generated suggestions and explanations were reviewed against the available experiment logs.
+
+The final assessed analysis and conclusions must be checked and written in accordance with the university's academic integrity requirements.
+
+## 14. References
+
+**Dataset:**
+
+Soni, V. et al. (2024). *Introducing AOD 4: A dataset for air borne object detection.* Data in Brief, 56, 110801.
+
+https://doi.org/10.1016/j.dib.2024.110801
+
+**YOLO11 documentation:**
+
+https://docs.ultralytics.com/models/yolo11/
+
+**ByteTrack:**
+
+Zhang, Y. et al. (2022). *ByteTrack: Multi-Object Tracking by Associating Every Detection Box.*
+
+**BoT-SORT:**
+
+Aharon, N., Orfaig, R. and Bobrovsky, B.-Z. (2022). *BoT-SORT: Robust Associations Multi-Pedestrian Tracking.*
+
+## 15. Conclusion
+
+This project investigated bird and drone detection using YOLO11n and video tracking on a CPU laptop.
+
+The final checkpoint achieved strong results on the configured AOD-4 evaluation images. However, the external-video experiments showed that predictions could vary considerably between different clips.
+
+The research highlights the importance of testing machine learning models beyond their original datasets and understanding their limitations before considering practical deployment.
