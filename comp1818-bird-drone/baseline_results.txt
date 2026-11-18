@@ -1,0 +1,12 @@
+﻿
+AOD-4 BASELINE RESULTS
+----------------------
+Training class counts: {1: 5522, 2: 5500, 0: 5508, 3: 5528}
+Test class counts: {2: 796, 1: 821, 0: 767, 3: 787}
+Majority training class: helicopter
+Majority-class accuracy: 24.82%
+Uniform random expected accuracy: 25.00%
+
+Note: Classification-only baselines.
+Ground-truth object locations are assumed.
+These scores are NOT detection mAP.
