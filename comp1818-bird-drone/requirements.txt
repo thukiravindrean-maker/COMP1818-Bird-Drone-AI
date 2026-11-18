@@ -6,3 +6,5 @@ scipy>=1.11
 PyYAML>=6.0
 lap>=0.5
 pytest>=8.0
+streamlit
+matplotlib
